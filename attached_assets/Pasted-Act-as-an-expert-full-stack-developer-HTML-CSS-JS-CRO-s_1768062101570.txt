@@ -1,0 +1,220 @@
+Act as an expert full-stack developer (HTML/CSS/JS) + CRO strategist with a Russell Brunson mindset, specialized in US financial services marketing with compliance awareness. Generate a COMPLETE, mobile-first, high-converting landing page in a SINGLE file: `index.html` (HTML + CSS + vanilla JS). Use Tailwind via CDN (no heavy frameworks). The page must be deployable on Netlify/Vercel, load fast (<2s), be accessible (ARIA, keyboard navigation, visible focus), and feel highly interactive.
+
+BRAND:
+CarSettlements.com
+
+PRIMARY GOAL:
+Convert cold traffic into qualified leads who are either (a) paying too much for an auto loan / negative equity, or (b) pre-repossession risk. The page must create an “epiphany” (Big Domino) and move visitors into a fast call scheduling flow.
+
+BUSINESS MODEL (COMPLIANCE-SAFE WORDING):
+We provide auto loan relief options. Depending on the situation, options MAY include restructuring or transferring obligations using capital solutions and/or third-party arrangements. Do NOT promise guaranteed outcomes. Fee: 20% success fee only if the customer chooses to move forward with an agreed solution. Results vary. Not a law firm. Not credit repair. Use cautious language: “may include,” “subject to approval,” “results vary.”
+
+LANGUAGES (MUST-HAVE, INTERACTIVE):
+Implement a language toggle (EN/ES) that switches all text instantly without reloading. Persist the preference in localStorage. Default language: English. Every section must have complete EN + ES copy.
+
+────────────────────────────────────────
+BIG DOMINO (MUST BE ABOVE THE FOLD)
+────────────────────────────────────────
+Force this belief shift at the very top:
+
+EN:
+“Your auto lender is NOT your only option before repossession.”
+
+ES:
+“Tu banco NO es tu única opción antes de que te quiten el carro.”
+
+This must be the backbone of the hero message and repeated in supporting sections.
+
+────────────────────────────────────────
+NAMED UNIQUE MECHANISM (MUST-HAVE)
+────────────────────────────────────────
+Create a named mechanism and reference it throughout the page:
+“Auto Loan Exit Path™”
+
+Define it in simple, non-technical terms:
+“A structured way to explore exit options most drivers never hear about.”
+
+Do NOT over-explain legal/technical details on the page; keep it curiosity-driven and benefit-focused.
+
+────────────────────────────────────────
+INTERACTIVITY (MUST FEEL “ALIVE”)
+────────────────────────────────────────
+Make the landing highly interactive with:
+- Step-by-step form (Step 1 frictionless, Step 2 details)
+- Dynamic estimator calculator (instant updates)
+- Progress indicator (“Step 1 of 2”)
+- Interactive “epiphany” mini chart (simple SVG) showing car value dropping vs loan balance
+- Micro-animations (CSS only): CTA hover, subtle pulse, card transitions
+- Sticky mobile bottom CTA bar
+- Smooth scrolling to form when CTAs are clicked
+- UTM capture and display (optional debug mode)
+
+────────────────────────────────────────
+AI ASSISTANT FLOATING BUTTON (MUST-HAVE)
+────────────────────────────────────────
+Add a floating AI Assistant button (bottom-right) that opens a chat widget overlay.
+The widget MUST:
+1) Work entirely client-side (no external AI calls).
+2) Be preloaded with a built-in knowledge base (FAQ + compliance answers) as a JavaScript array/object.
+3) Support EN/ES responses depending on selected language.
+4) Provide quick reply buttons (chips) for top questions.
+5) Allow easy future expansion:
+   - A “Knowledge Base” JS section with placeholders for adding future testimonials, lender examples, and more info.
+   - Include clear comments: “Add new Q/A here” and “Add testimonials here”.
+
+Chat behavior:
+- Use simple keyword matching / scoring to retrieve the best matching FAQ entry.
+- If confidence is low, respond with a safe fallback:
+  EN: “I can help—please share your state and whether you’re behind on payments.”
+  ES: “Puedo ayudarte—dime tu estado y si estás atrasado en pagos.”
+- Add a “Talk to a specialist” button inside the chat that scrolls to the form or opens the scheduling link.
+
+Include a “Reset chat” and “Close” button. Make it accessible (ARIA labels) and keyboard navigable.
+
+────────────────────────────────────────
+REQUIRED SECTIONS (STRUCTURE)
+────────────────────────────────────────
+
+1) TOP BAR
+- Text logo “CarSettlements.com”
+- Click-to-call phone (placeholder)
+- CTA “Free Consultation”
+
+2) HERO (HIGH EMOTION, FAST CLARITY)
+- Headline:
+  “Paying too much for a car that’s worth less every month?”
+- Subheadline:
+  “Before repossession escalates, see if you qualify for a different exit.”
+- Story card (Representative Example):
+  Name + State
+  Auto loan balance
+  Monthly payment
+  Estimated reduction range
+  Timeline 12–48 months
+  Must label: “Representative example. Results vary.”
+- Primary CTA button:
+  “See My Options”
+- Micro disclaimer visible:
+  “Results vary. Not a law firm. Not credit repair. Not legal advice.”
+
+3) EPIPHANY SECTION (BEFORE FORM)
+Title:
+“Why car loans break good people”
+Bullets:
+- Cars lose value. Loans don’t.
+- Lenders optimize for contracts, not for people.
+- Most drivers never see exit options early enough.
+Include a simple SVG chart: car value decreases vs loan balance flatter.
+Add a short bridge sentence introducing Auto Loan Exit Path™.
+
+4) STEP FORM (2 STEPS)
+STEP 1 (ONLY 3 FIELDS):
+- “Is your car payment too high?” (Yes/No)
+- “Are you behind on payments?” (0 / 1–2 / 3+)
+- State (US states dropdown)
+Button:
+“Check My Exit Options”
+Show a progress indicator “Step 1 of 2”.
+
+STEP 2 (DETAILS):
+- First Name / Last Name
+- Phone (US format) + Email
+- Auto loan balance (number + synced slider)
+- Current monthly payment
+- APR (default 14)
+- Months since loan started (optional)
+- Vehicle make/model
+- Vehicle year
+- Consent checkbox (TCPA-style neutral language; do not promise)
+Submit button:
+“Get My Free Review”
+
+Front-end validation: require phone, email, balance, state.
+
+5) LIVE ESTIMATOR (VANILLA JS)
+Inputs: balance, APR, payment, monthsBehind
+Outputs (always labeled as estimates):
+- Estimated savings range (dynamic based on monthsBehind):
+  0 => 10–25%
+  1–2 => 20–35%
+  3–5 => 25–45%
+  6+ => 30–50%
+- Estimated new balance range
+- Estimated new payment range
+- Estimated term range (24–48 months, dynamic)
+Always show:
+“Estimates only. Final outcomes depend on lender, state, and approval.”
+
+6) HOW IT WORKS (4 SIMPLE STEPS)
+1. Quick review
+2. We map possible exit paths (including Auto Loan Exit Path™)
+3. If you choose to proceed, we coordinate next steps quickly (pre-repo urgency)
+4. You move forward with a reduced burden (12–48 months typical)
+No guarantees.
+
+7) “WE WORK WITH MANY AUTO LENDERS” (EXAMPLES ONLY)
+List examples: Ford Credit, GM Financial, Toyota Financial, Ally, Chase Auto, Capital One Auto, etc.
+Add:
+“Examples only — no affiliation.”
+
+8) TRUST SIGNALS
+- Secure form / SSL icons (inline SVG)
+- Privacy-first
+- “No success fee unless you move forward with an agreed solution*”
+Add footnote:
+“*Fee structure explained during consultation. Results vary.”
+Include a commented “Accreditations (optional)” block that must NOT be displayed unless verified.
+
+9) TESTIMONIALS (3)
+- Use avatars (SVG placeholders)
+- Each labeled “Representative example”
+- Focus on: lower payment, avoided escalation, clarity, kept vehicle when possible.
+
+10) FAQ (6–10)
+Include both EN/ES.
+- Can you stop repossession?
+- Do I keep my car?
+- Is this refinancing?
+- Will this affect my credit?
+- How fast can I get help?
+- What loans qualify?
+- How do you charge fees?
+- What if I’m current but payments are too high?
+All answers cautious, no guarantees.
+
+11) FOOTER
+- Contact (placeholders)
+- Privacy / Terms / Disclaimer links
+- Legal line:
+“CarSettlements.com provides auto loan relief options. Not a law firm. Not credit repair. Results vary.”
+Include JSON-LD schema.org FinancialService with placeholders.
+
+────────────────────────────────────────
+GHL INTEGRATION (MUST-HAVE)
+────────────────────────────────────────
+- POST the lead to a GoHighLevel webhook (placeholder):
+  const GHL_WEBHOOK_URL = "https://YOUR_GHL_WEBHOOK_HERE"
+- Send JSON with all fields + selected language + timestamp + UTM parameters (parse UTM from URL and include).
+- If webhook fails, fallback to a mailto: placeholder AND show a confirmation message anyway (do not lose the lead).
+- After successful submit: show a modal:
+  “Thanks — we’ll contact you shortly.” + “Schedule now” button (placeholder booking link).
+
+────────────────────────────────────────
+TRACKING PLACEHOLDERS
+────────────────────────────────────────
+Add commented placeholders (do not load real scripts) for:
+- Meta/Facebook Pixel
+- Google Tag / GA4
+Also add a simple CTA click event hook (console.log + comment where to integrate).
+
+────────────────────────────────────────
+SEO / PERFORMANCE / ACCESSIBILITY
+────────────────────────────────────────
+- Meta title/description targeting: “lower car payment”, “auto loan help”, “avoid repossession”
+- OG tags, canonical placeholder, hreflang en/es
+- No heavy images; use SVG placeholders only
+- Ensure color contrast, focus rings, aria-labels, and keyboard navigation
+
+DELIVERABLE:
+Return the FULL content of `index.html` in one response, with clear comments on where to edit:
+- phone number, disclaimers, GHL webhook URL, scheduling link, thresholds/ranges, policies, knowledge base Q&A entries, testimonials expansion.
