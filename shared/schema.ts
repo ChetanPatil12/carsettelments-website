@@ -33,6 +33,7 @@ export const leads = pgTable("leads", {
   vehicleMake: text("vehicle_make"),
   vehicleModel: text("vehicle_model"),
   vehicleYear: integer("vehicle_year"),
+  notes: text("notes"),
   consent: boolean("consent").notNull(),
   language: text("language").notNull().default("en"),
   utmSource: text("utm_source"),

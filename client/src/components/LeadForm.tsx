@@ -31,6 +31,7 @@ const step2Schema = z.object({
   vehicleMake: z.string().optional(),
   vehicleModel: z.string().optional(),
   vehicleYear: z.number().min(1990).max(2030).optional(),
+  notes: z.string().optional(),
   consent: z.boolean().refine((val) => val === true, "Consent is required"),
 });
 
@@ -70,6 +71,7 @@ export function LeadForm({ onSubmit, isSubmitting }: LeadFormProps) {
       vehicleMake: "",
       vehicleModel: "",
       vehicleYear: new Date().getFullYear() - 2,
+      notes: "",
       consent: false,
     },
   });
@@ -436,6 +438,20 @@ export function LeadForm({ onSubmit, isSubmitting }: LeadFormProps) {
                         )}
                       />
                     </div>
+
+                    <FormField
+                      control={step2Form.control}
+                      name="notes"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel data-testid="label-notes">{t("form.step2.notes") || "Additional Notes"}</FormLabel>
+                          <FormControl>
+                            <Input {...field} placeholder={t("form.step2.notesPlaceholder") || "Any details you'd like to share..."} className="h-12" data-testid="input-notes" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
 
                     <FormField
                       control={step2Form.control}
