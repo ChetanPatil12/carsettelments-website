@@ -78,6 +78,8 @@ const translations: Record<string, Record<Language, string>> = {
   "form.step2.vehicleMake": { en: "Vehicle Make", es: "Marca del Vehículo" },
   "form.step2.vehicleModel": { en: "Vehicle Model", es: "Modelo del Vehículo" },
   "form.step2.vehicleYear": { en: "Vehicle Year", es: "Año del Vehículo" },
+  "form.step2.notes": { en: "Additional Notes", es: "Notas Adicionales" },
+  "form.step2.notesPlaceholder": { en: "Any details you'd like to share...", es: "Cualquier detalle que desees compartir..." },
   "form.step2.consent": { 
     en: "I consent to be contacted by CarSettlements regarding my inquiry. Message and data rates may apply. Results are not guaranteed.", 
     es: "Doy mi consentimiento para ser contactado por CarSettlements respecto a mi consulta. Pueden aplicar tarifas de mensajes y datos. Los resultados no están garantizados." 

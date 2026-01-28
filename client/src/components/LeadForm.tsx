@@ -444,9 +444,9 @@ export function LeadForm({ onSubmit, isSubmitting }: LeadFormProps) {
                       name="notes"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel data-testid="label-notes">{t("form.step2.notes") || "Additional Notes"}</FormLabel>
+                          <FormLabel data-testid="label-notes">{t("form.step2.notes")}</FormLabel>
                           <FormControl>
-                            <Input {...field} placeholder={t("form.step2.notesPlaceholder") || "Any details you'd like to share..."} className="h-12" data-testid="input-notes" />
+                            <Input {...field} placeholder={t("form.step2.notesPlaceholder")} className="h-12" data-testid="input-notes" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
