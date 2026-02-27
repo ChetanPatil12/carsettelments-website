@@ -49,8 +49,8 @@ export function TopBar() {
             <button
               onClick={() => setLanguage("en")}
               className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${language === "en"
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
               data-testid="button-lang-en"
               aria-pressed={language === "en"}
@@ -60,8 +60,8 @@ export function TopBar() {
             <button
               onClick={() => setLanguage("es")}
               className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${language === "es"
-                  ? "bg-primary text-primary-foreground"
-                  : "text-muted-foreground hover:text-foreground"
+                ? "bg-primary text-primary-foreground"
+                : "text-muted-foreground hover:text-foreground"
                 }`}
               data-testid="button-lang-es"
               aria-pressed={language === "es"}
@@ -78,7 +78,7 @@ export function TopBar() {
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
             <span>{t("nav.phone")}</span>
-            <span className="font-semibold text-foreground">(404) 604-7834</span>
+            <span className="font-semibold text-foreground">+1 (404) 604-7834</span>
           </a>
 
           <Button
