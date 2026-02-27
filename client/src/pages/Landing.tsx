@@ -15,7 +15,7 @@ import { Footer } from "@/components/Footer";
 import { AIChatWidget } from "@/components/AIChatWidget";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 import { SuccessModal } from "@/components/SuccessModal";
-import { apiRequest } from "@/lib/queryClient";
+// import { apiRequest } from "@/lib/queryClient"; // Removed as backend is deleted
 
 function getUTMParams() {
   if (typeof window === "undefined") return {};
@@ -35,35 +35,18 @@ export default function Landing() {
 
   const handleFormSubmit = async (formData: any) => {
     setIsSubmitting(true);
-    
-    const utm = getUTMParams();
-    const leadData = {
-      ...formData,
-      language,
-      ...utm,
-    };
 
-    try {
-      const response = await apiRequest("POST", "/api/leads", leadData);
-      if (response.ok) {
-        setShowSuccess(true);
-      } else {
-        throw new Error("Submission failed");
-      }
-    } catch (error) {
-      console.error("Form submission error:", error);
-      toast({
-        title: language === "es" ? "Error" : "Error",
-        description: t("form.error"),
-        variant: "destructive",
-      });
-      const mailtoLink = `mailto:help@carsettlements.com?subject=Lead%20Inquiry&body=${encodeURIComponent(
-        `Name: ${formData.firstName} ${formData.lastName}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nState: ${formData.state}\nBalance: $${formData.loanBalance}\nPayment: $${formData.monthlyPayment}`
-      )}`;
-      window.open(mailtoLink, "_blank");
-    } finally {
-      setIsSubmitting(false);
-    }
+    // Construct the mailto link directly - backend has been removed
+    const mailtoLink = `mailto:help@carsettlements.com?subject=Lead%20Inquiry&body=${encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\nPhone: ${formData.phone}\nEmail: ${formData.email}\nState: ${formData.state}\nBalance: $${formData.loanBalance}\nPayment: $${formData.monthlyPayment}`
+    )}`;
+
+    // Open email client in new tab
+    window.open(mailtoLink, "_blank");
+
+    // Reset submission state but do NOT show success modal
+    // setShowSuccess(true); 
+    setIsSubmitting(false);
   };
 
   return (
