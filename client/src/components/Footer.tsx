@@ -9,22 +9,22 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12 md:px-6 md:py-16">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <a 
-              href="/" 
+            <a
+              href="/"
               className="mb-4 flex items-center gap-2 text-xl font-bold text-primary"
               aria-label="CarSettlements Home"
             >
-              <svg 
-                className="h-8 w-8" 
-                viewBox="0 0 32 32" 
-                fill="none" 
+              <svg
+                className="h-8 w-8"
+                viewBox="0 0 32 32"
+                fill="none"
                 aria-hidden="true"
               >
                 <circle cx="16" cy="16" r="14" className="fill-primary" />
-                <path 
-                  d="M8 18C8 18 10 14 16 14C22 14 24 18 24 18" 
-                  stroke="white" 
-                  strokeWidth="2" 
+                <path
+                  d="M8 18C8 18 10 14 16 14C22 14 24 18 24 18"
+                  stroke="white"
+                  strokeWidth="2"
                   strokeLinecap="round"
                 />
                 <circle cx="11" cy="20" r="2" fill="white" />
@@ -41,18 +41,18 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-foreground">{t("footer.contact")}</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a 
-                  href="tel:+18005550199" 
+                <a
+                  href="tel:+14046047834"
                   className="flex items-center gap-2 transition-colors hover:text-foreground"
                   data-testid="link-footer-phone"
                 >
                   <Phone className="h-4 w-4" aria-hidden="true" />
-                  800-555-0199
+                  +1 (404) 604-7834
                 </a>
               </li>
               <li>
-                <a 
-                  href="mailto:help@carsettlements.com" 
+                <a
+                  href="mailto:help@carsettlements.com"
                   className="flex items-center gap-2 transition-colors hover:text-foreground"
                   data-testid="link-footer-email"
                 >
@@ -71,8 +71,8 @@ export function Footer() {
             <h3 className="mb-4 font-semibold text-foreground">Legal</h3>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
-                <a 
-                  href="/privacy" 
+                <a
+                  href="/privacy"
                   className="transition-colors hover:text-foreground"
                   data-testid="link-footer-privacy"
                 >
@@ -80,8 +80,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/terms" 
+                <a
+                  href="/terms"
                   className="transition-colors hover:text-foreground"
                   data-testid="link-footer-terms"
                 >
@@ -89,8 +89,8 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a 
-                  href="/disclaimer" 
+                <a
+                  href="/disclaimer"
                   className="transition-colors hover:text-foreground"
                   data-testid="link-footer-disclaimer"
                 >
